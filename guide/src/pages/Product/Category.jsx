@@ -1,6 +1,10 @@
 import BackButton from "../../components/BackButton";
+import HeaderSlot from "../../components/HeaderSlot";
+import MainMenuButton from "../../components/MainMenuButton";
+import { useNavigate } from "react-router-dom";
 
 export default function Category() {
+  const navigate = useNavigate();
   return (
     <main className="min-h-screen bg-slate-200 flex items-center justify-center p-8">
       <section
@@ -14,10 +18,34 @@ export default function Category() {
           gap-10
         "
       >
-        <div className="w-55 h-20">
+        <HeaderSlot>
           <BackButton />
-        </div>
+        </HeaderSlot>
 
+        <div className="flex-1 grid grid-cols-2 grid-rows-2 gap-8">
+          <MainMenuButton
+            title="아이스크림"
+            colorClass="bg-blue-600 hover:bg-blue-700"
+            // onClick={() => navigate("/payment/method")}
+          />
+          <MainMenuButton
+            title="과자"
+            colorClass="bg-emerald-600 hover:bg-emerald-700"
+            // onClick={() => navigate("/payment/cancel")}
+          />
+          <MainMenuButton
+            title="음료"
+            colorClass="bg-amber-500 hover:bg-amber-600"
+            // onClick={() => navigate("/payment/qr")}
+          />
+          <MainMenuButton
+            title="기타"
+            colorClass="bg-slate-700 hover:bg-slate-800"
+            // onClick={() => navigate("/payment/account")}
+          />
+        </div>
+        
+        
         
       </section>
     </main>

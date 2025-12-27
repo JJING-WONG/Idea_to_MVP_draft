@@ -1,6 +1,18 @@
 import BackButton from "../../components/BackButton";
+import HeaderSlot from "../../components/HeaderSlot";
+import { useEffect } from "react";
 
 export default function Toilet() {
+  useEffect(() => {
+    const audio = new Audio("/toilet.mp3");
+    audio.volume = 1;
+    audio.play().catch(() => {
+    });
+    return () => {
+      audio.pause();
+      audio.currentTime = 0;
+    };
+  }, []);
   return (
     <main className="min-h-screen bg-slate-200 flex items-center justify-center p-8">
       <section
@@ -14,10 +26,18 @@ export default function Toilet() {
           gap-10
         "
       >
-        <div className="w-55 h-20">
+        <HeaderSlot>
           <BackButton />
-        </div>
-
+        </HeaderSlot>
+          <img
+            src="/toilet.jpeg"
+            alt="화장실 위치"
+            className="
+              max-w-full
+              h-[600px]
+              object-contain
+            "
+          />
         
       </section>
     </main>

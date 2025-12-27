@@ -1,5 +1,6 @@
 import MainMenuButton from "../components/MainMenuButton";
 import BackButton from "../components/BackButton";
+import HeaderSlot from "../components/HeaderSlot";
 import { useNavigate } from "react-router-dom";
 
 export default function EtcPage() {
@@ -18,9 +19,9 @@ export default function EtcPage() {
           gap-10
         "
       >
-        <div className="w-55 h-20">
+        <HeaderSlot>
           <BackButton />
-        </div>
+        </HeaderSlot>
 
         <div className="flex-1 flex items-center justify-center">
           <div className="w-full grid grid-cols-2 gap-10">

@@ -1,4 +1,5 @@
 import BackButton from "../../components/BackButton";
+import HeaderSlot from "../../components/HeaderSlot";
 
 export default function QR() {
   return (
@@ -14,10 +15,37 @@ export default function QR() {
           gap-10
         "
       >
-        <div className="w-55 h-20">
+        <HeaderSlot>
           <BackButton />
-        </div>
+        </HeaderSlot>
 
+        <div className="flex-1 flex items-center justify-center">
+          <div
+            className="
+              w-full max-w-[900px]
+              h-[500px]
+              p-8
+              rounded-2xl
+              bg-white
+              shadow
+              flex items-center justify-center
+              text-center
+              text-5xl
+              font-semibold
+              text-slate-700
+            "
+          >
+            <img
+              src="/qr.jpg"
+              alt="QR 코드"
+              className="
+                max-w-full
+                max-h-full
+                object-contain
+              "
+            />
+          </div>
+        </div>
         
       </section>
     </main>

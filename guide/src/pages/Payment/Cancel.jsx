@@ -1,4 +1,5 @@
 import BackButton from "../../components/BackButton";
+import HeaderSlot from "../../components/HeaderSlot";
 
 export default function Cancel() {
   return (
@@ -14,10 +15,29 @@ export default function Cancel() {
           gap-10
         "
       >
-        <div className="w-55 h-20">
+        <HeaderSlot>
           <BackButton />
-        </div>
+        </HeaderSlot>
 
+        <div className="flex-1 flex items-center justify-center">
+          <div
+            className="
+              w-full max-w-[900px]
+              h-[500px]
+              p-8
+              rounded-2xl
+              bg-white
+              shadow
+              flex items-center justify-center
+              text-center
+              text-5xl
+              font-semibold
+              text-slate-700
+            "
+          >
+            010-XXXX-XXXX 으로 연락주세요
+          </div>
+        </div>
         
       </section>
     </main>

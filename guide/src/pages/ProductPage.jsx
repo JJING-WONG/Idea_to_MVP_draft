@@ -1,10 +1,21 @@
 import MainMenuButton from "../components/MainMenuButton";
 import BackButton from "../components/BackButton";
+import HeaderSlot from "../components/HeaderSlot";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 export default function ProductPage() {
   const navigate = useNavigate();
-
+  useEffect(() => {
+    const audio = new Audio("/product.mp3");
+    audio.volume = 1;
+    audio.play().catch(() => {
+    });
+    return () => {
+      audio.pause();
+      audio.currentTime = 0;
+    };
+  }, []);
   return (
     <main className="min-h-screen bg-slate-200 flex items-center justify-center p-8">
       <section
@@ -18,9 +29,9 @@ export default function ProductPage() {
           gap-10
         "
       >
-        <div className="w-55 h-20">
+        <HeaderSlot>
           <BackButton />
-        </div>
+        </HeaderSlot>
 
         <div className="flex-1 flex items-center justify-center">
           <div className="w-full grid grid-cols-2 gap-10">

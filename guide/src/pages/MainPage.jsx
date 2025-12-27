@@ -1,10 +1,22 @@
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 import MainMenuButton from "../components/MainMenuButton";
 import HeaderSlot from "../components/HeaderSlot";
 import LogoTile from "../components/LogoTile";
 
 export default function MainPage() {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const audio = new Audio("/intro.mp3");
+    audio.volume = 1;
+    audio.play().catch(() => {
+    });
+    return () => {
+      audio.pause();
+      audio.currentTime = 0;
+    };
+  }, []);
 
   return (
     <main className="min-h-screen bg-slate-200 flex items-center justify-center p-8">
@@ -40,7 +52,7 @@ export default function MainPage() {
             onClick={() => navigate("/plastic")}
           />
           <MainMenuButton
-            title="기타"
+            title="주차정산 / 화장실"
             colorClass="bg-slate-700 hover:bg-slate-800"
             onClick={() => navigate("/etc")}
           />

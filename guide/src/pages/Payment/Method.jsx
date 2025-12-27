@@ -1,4 +1,6 @@
 import BackButton from "../../components/BackButton";
+import HeaderSlot from "../../components/HeaderSlot";
+import Card from "../../assets/card.mp4";
 
 export default function Method() {
   return (
@@ -14,10 +16,26 @@ export default function Method() {
           gap-10
         "
       >
-        <div className="w-55 h-20">
+        <HeaderSlot>
           <BackButton />
-        </div>
+        </HeaderSlot>
 
+        <div className="flex-1 flex items-center justify-center">
+          <video
+            src="/card.mp4"
+            controls
+            autoPlay
+            muted
+            loop
+            className="
+              w-full max-w-[900px]
+              max-h-[600px]
+              rounded-2xl
+              shadow-lg
+              bg-black
+            "
+          />
+        </div>
         
       </section>
     </main>
